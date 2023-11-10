@@ -31,7 +31,11 @@ section.alternate-background {
 }
 
 main img {
-  width: 100px;
+  max-width: 100%;
+}
+
+#about img{
+  margin-bottom: 10px;
 }
 
 /* ---  Groups & Items --- */
@@ -42,6 +46,9 @@ main img {
 }
 
 .item {
+  /* Display label and input in a single row */
+  display: flex;
+  justify-content: space-between;
   flex: 1;
   margin: 10px;
 }
@@ -62,6 +69,19 @@ header {
   font-family: "Pangolin", cursive;
   font-size: 72px;
   color: #fff;
+  text-align: center;
+}
+
+/* Styling navigation */
+header nav {
+  display: flex;
+  justify-content: center;
+}
+
+/* Styling unordered list */
+header nav ul {
+  /* Display navigation in a single row */
+  display: flex;
 }
 
 header nav ul li {
@@ -92,7 +112,7 @@ form label {
 form select,
 form input {
   margin-bottom: 20px;
-  width: 180px;
+  width: 75%;
 }
 
 form button {
@@ -117,3 +137,79 @@ footer p {
 }
 
 /* -------  Media Query ------- */
+/* Desktop View */
+@media all and (min-width: 768px) {
+  /* -------Logo & Navigation------- */
+  /* Display logo and navigation in a single row */
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .logo {
+    text-align: left;
+    padding-top: 0;
+  }
+
+  header nav {
+    margin-top: 0;
+  }
+
+  header nav ul {
+    padding: 10px;
+  }
+
+  /* ------Search Form------- */
+  /* Display form elements horizontally */
+  form {
+    display: flex;
+  }
+
+  /* Place input under lable */
+  .item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* -------- About Section --------*/
+  /* Align the items in the "About" & "host" section */
+  .container,
+  .host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .image{
+    max-width: 25%;
+    margin-right: 10px;
+  }
+
+  /* ----------Idea Section-------- */
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  /* Creat a 2 by 2 image grid */
+  .row-1-col-1,
+  .row-1-col-2,
+  .row-2-col-1,
+  .row-2-col-2 {
+    flex-basis: 50%;
+  }
+
+  .grid img {
+    max-width: 98%;
+  };
+
+  /* ---------Host Section---------*/
+  .become-a-host {
+    flex-direction: column;
+  }
+
+  .host-image {
+    max-width: 50%;
+  }
+}
